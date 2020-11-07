@@ -7,3 +7,4 @@ Learning javascript from Udemy. [Course URL](https://www.udemy.com/course/the-co
 [PROJECT URL](https://rameskum.github.io/javascript-learning/)
 
 - **guess-my-number** [demo](./projects/guess-my-number/)
+- **modal** [demo](./projects/modal/)
