@@ -1,11 +1,9 @@
-# javascript-learning
+# Learning Javascript
 
-Learning javascript from Udemy.
+Learning javascript from Udemy. [Course URL](https://www.udemy.com/course/the-complete-javascript-course/)
 
-Course [https://www.udemy.com/course/the-complete-javascript-course/]
+## PRACTICE PROJECTS
 
-## PROJECTS
-
-[PROJECT DEMO URL](https://rameskum.github.io/javascript-learning/)
+[PROJECT URL](https://rameskum.github.io/javascript-learning/)
 
 - **guess-my-number** [demo](./javascript-learning/games/guess-my-number/)
