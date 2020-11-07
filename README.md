@@ -16,3 +16,4 @@ event loop concurrency model.**
 
 - **guess-my-number** [demo](./projects/guess-my-number/)
 - **modal** [demo](./projects/modal/)
+- **pig-game** [demo](./projects/pig-game/)
