@@ -4,11 +4,11 @@ Learning javascript from Udemy. [Course URL](https://www.udemy.com/course/the-co
 
 ### Definition
 
-**JavaScript is qa High-Level, Prototype based object oriented,
-multi-paradigm, interpreted or just-in-time compiled,
-dynamic, single threaded, garbage-collected programming
-language with first-class functions and non-blocking
-event loop concurrency model.**
+**JavaScript** is qa **_High-Level_**, **_Prototype-based object oriented_**,
+**_multi-paradigm_**, **_interpreted or just-in-time compiled_**,
+**_dynamic_**, **_single threaded_**, **_garbage-collected_** programming
+language with **_first-class functions_** and non-blocking
+**_event loop concurrency model_**.
 
 ## PRACTICE PROJECTS
 
