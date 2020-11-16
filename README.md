@@ -29,9 +29,17 @@ language with **_first-class functions_** and non-blocking
 - **Non-blocking Event Loop**:
   A long running task would block the single thread. So by using event loop, long running task, executes in the background and put them back in the main thread once they are finished.
 
+---
+
 ## PRACTICE PROJECTS
 
 [PROJECT URL](https://rameskum.github.io/javascript-learning/)
+
+#### CONCEPTS
+
+- **Closures** [link](./concepts/closures.md)
+
+#### PROJECTS
 
 - **guess-my-number** [demo](./projects/guess-my-number/)
 - **modal** [demo](./projects/modal/)
