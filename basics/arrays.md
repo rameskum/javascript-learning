@@ -16,7 +16,7 @@ The JavaScript **Array** class is a global object that is used in the constructi
 - **pop** : Remove an item from the end of an Array
 
   ```javascript
-  let last = fruits.pop(); // remove Orange (from the end)  let newLength = fruits.push('Orange');
+  let last = fruits.pop(); // remove Orange (from the end)
   // ["Apple", "Banana"]
   ```
 
