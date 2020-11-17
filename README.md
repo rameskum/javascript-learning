@@ -46,3 +46,4 @@ language with **_first-class functions_** and non-blocking
 - **guess-my-number** [demo](./projects/guess-my-number/)
 - **modal** [demo](./projects/modal/)
 - **pig-game** [demo](./projects/pig-game/)
+- **bankist** [demo](./projects/bankist/)
