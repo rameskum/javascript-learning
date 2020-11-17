@@ -163,3 +163,23 @@ btnTransfer.addEventListener('click', function (e) {
 		updateUi(currentAccount);
 	}
 });
+
+btnClose.addEventListener('click', function (e) {
+	e.preventDefault();
+	const closeUserName = inputCloseUsername.value;
+	const closeUserPin = Number(inputClosePin.value);
+
+	const userIndex = accounts.findIndex(
+		acc =>
+			acc.username === closeUserName &&
+			acc.pin === closeUserPin &&
+			acc.username === currentAccount.username
+	);
+
+	inputCloseUsername.value = inputClosePin.value = null;
+
+	if (userIndex >= 0) {
+		accounts.splice(userIndex, 1);
+		containerApp.style.opacity = 0;
+	}
+});
