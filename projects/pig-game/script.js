@@ -26,9 +26,10 @@ const resetGame = function () {
 	current0El.textContent = 0;
 	current1El.textContent = 0;
 	diceEl.classList.add('hidden');
-	document
-		.querySelector(`.player--${activePlayer}`)
-		.classList.remove('player--winner');
+	const activePlayerBox = document.querySelector(`.player--${activePlayer}`);
+	activePlayerBox.classList.remove('player--winner');
+	activePlayerBox.classList.remove('player--active');
+
 	document.querySelector(`.player--0`).classList.add('player--active');
 	activePlayer = 0;
 };
