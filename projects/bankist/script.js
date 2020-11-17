@@ -183,3 +183,17 @@ btnClose.addEventListener('click', function (e) {
 		containerApp.style.opacity = 0;
 	}
 });
+
+btnLoan.addEventListener('click', function (ele) {
+	ele.preventDefault();
+	const loanAmount = Number(inputLoanAmount.value);
+	if (
+		loanAmount > 0 &&
+		currentAccount.movements.some(mov => mov >= loanAmount * 0.1)
+	) {
+		console.log('loan granted');
+		currentAccount.movements.push(loanAmount);
+		updateUi(currentAccount);
+	}
+	inputLoanAmount.value = null;
+});
