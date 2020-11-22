@@ -16,10 +16,10 @@ const account1 = {
 		'2019-12-23T07:42:02.383Z',
 		'2020-01-28T09:15:04.904Z',
 		'2020-04-01T10:17:24.185Z',
-		'2020-05-08T14:11:59.604Z',
-		'2020-05-27T17:01:17.194Z',
-		'2020-07-11T23:36:17.929Z',
-		'2020-07-12T10:51:36.790Z',
+		'2020-11-10T14:11:59.604Z',
+		'2020-11-19T17:01:17.194Z',
+		'2020-11-21T10:51:36.790Z',
+		'2020-11-22T23:36:17.929Z',
 	],
 	currency: 'EUR',
 	locale: 'pt-PT', // de-DE
@@ -89,6 +89,22 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
 
+const formatMovementDate = function (movementDate) {
+	const calcDaysPassed = (date1, date2) =>
+		Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+
+	const daysPassed = calcDaysPassed(new Date(), movementDate);
+
+	if (daysPassed === 0) return 'Today';
+	if (daysPassed === 1) return 'Yesterday';
+	if (daysPassed <= 7) return `${daysPassed} days ago`;
+
+	const day = `${movementDate.getDate()}`.padStart(2, 0);
+	const month = `${movementDate.getMonth() + 1}`.padStart(2, 0);
+	const year = movementDate.getFullYear();
+	return `${day}/${month}/${year}`;
+};
+
 const displayMovements = function (acc, sort = false) {
 	containerMovements.innerHTML = '';
 
@@ -99,13 +115,7 @@ const displayMovements = function (acc, sort = false) {
 	moves.forEach(function (mov, i) {
 		const type = mov > 0 ? 'deposit' : 'withdrawal';
 		const movementDate = new Date(acc.movementsDates[i]);
-
-		const day = `${movementDate.getDate()}`.padStart(2, 0);
-		const month = `${movementDate.getMonth() + 1}`.padStart(2, 0);
-		const year = movementDate.getFullYear();
-
-		const displayDate = `${day}/${month}/${year}`;
-
+		const displayDate = formatMovementDate(movementDate);
 		const html = `
 		<div class="movements__row">
 			<div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
@@ -167,9 +177,9 @@ const updateUi = function (account) {
 let currentAccount;
 
 // FAKE ALWAYS LOGGED IN
-// currentAccount = account1;
-// updateUi(currentAccount);
-// containerApp.style.opacity = 100;
+currentAccount = account1;
+updateUi(currentAccount);
+containerApp.style.opacity = 100;
 
 // day/month/year
 
