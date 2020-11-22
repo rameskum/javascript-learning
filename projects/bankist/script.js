@@ -167,9 +167,9 @@ const updateUi = function (account) {
 let currentAccount;
 
 // FAKE ALWAYS LOGGED IN
-currentAccount = account1;
-updateUi(currentAccount);
-containerApp.style.opacity = 100;
+// currentAccount = account1;
+// updateUi(currentAccount);
+// containerApp.style.opacity = 100;
 
 // day/month/year
 
