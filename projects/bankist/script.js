@@ -295,11 +295,13 @@ btnLoan.addEventListener('click', function (ele) {
 		loanAmount > 0 &&
 		currentAccount.movements.some(mov => mov >= loanAmount * 0.1)
 	) {
-		console.log('loan granted');
-		currentAccount.movements.push(loanAmount);
-		// add transfer date
-		currentAccount.movementsDates.push(new Date().toISOString());
-		updateUi(currentAccount);
+		setTimeout(function () {
+			console.log('loan granted');
+			currentAccount.movements.push(loanAmount);
+			// add transfer date
+			currentAccount.movementsDates.push(new Date().toISOString());
+			updateUi(currentAccount);
+		}, 3000);
 	}
 	inputLoanAmount.value = null;
 });
