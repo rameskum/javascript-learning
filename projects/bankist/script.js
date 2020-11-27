@@ -202,8 +202,29 @@ const updateUi = function (account) {
 	calcDisplaySummary(account);
 };
 
+const setLogoutLTimer = function () {
+	const tick = function () {
+		const min = String(Math.trunc(time / 60)).padStart(2, 0);
+		const sec = String(time % 60).padStart(2, 0);
+		labelTimer.textContent = `${min}:${sec}`;
+		// in each call, print the remaining time
+		if (time === 0) {
+			labelWelcome.textContent = `Log in to get started`;
+			containerApp.style.opacity = 0;
+			clearInterval(timer);
+		}
+		time--;
+	};
+	// set time to 5 minutes
+	let time = 120;
+	// call the timer every second
+	tick();
+	const timer = setInterval(tick, 1000);
+	return timer;
+};
+
 // events handlers
-let currentAccount;
+let currentAccount, timer;
 
 // FAKE ALWAYS LOGGED IN
 // currentAccount = account1;
@@ -237,7 +258,13 @@ btnLogin.addEventListener('click', function (e) {
 		labelWelcome.textContent = `Welcome back, ${
 			currentAccount.owner.split(' ')[0]
 		}`;
+
 		containerApp.style.opacity = 100;
+
+		inputLoginUsername.value = inputLoginPin.value = '';
+		inputLoginPin.blur();
+		if (timer) clearInterval(timer);
+		timer = setLogoutLTimer();
 		updateUi(currentAccount);
 	}
 });
@@ -265,6 +292,8 @@ btnTransfer.addEventListener('click', function (e) {
 		receiverAcc.movementsDates.push(new Date().toISOString());
 
 		updateUi(currentAccount);
+		clearInterval(timer);
+		timer = setLogoutLTimer();
 	}
 });
 
@@ -301,6 +330,8 @@ btnLoan.addEventListener('click', function (ele) {
 			// add transfer date
 			currentAccount.movementsDates.push(new Date().toISOString());
 			updateUi(currentAccount);
+			clearInterval(timer);
+			timer = setLogoutLTimer();
 		}, 3000);
 	}
 	inputLoanAmount.value = null;
