@@ -47,3 +47,4 @@ language with **_first-class functions_** and non-blocking
 - **modal** [demo](./projects/modal/)
 - **pig-game** [demo](./projects/pig-game/)
 - **bankist** [demo](./projects/bankist/)
+- **bankist-portfolio** [demo](./projects/bankist-portfolio/)
