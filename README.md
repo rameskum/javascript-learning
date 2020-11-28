@@ -40,6 +40,7 @@ language with **_first-class functions_** and non-blocking
 #### BASICS
 
 - **arrays** [link](./basics/arrays.md)
+- **numbers** [link](./basics/numbers.md)
 
 #### PROJECTS
 
