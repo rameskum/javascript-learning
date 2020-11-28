@@ -41,6 +41,7 @@ language with **_first-class functions_** and non-blocking
 
 - **arrays** [link](./basics/arrays.md)
 - **numbers** [link](./basics/numbers.md)
+- **date and time** [link](./basics/datetime.md)
 
 #### PROJECTS
 
