@@ -28,3 +28,18 @@ document.addEventListener('keydown', function (e) {
 		closeModal();
 	}
 });
+
+// cookie banner
+const header = document.querySelector('.header');
+const cookieMessage = document.createElement('div');
+cookieMessage.classList.add('cookie-message');
+cookieMessage.innerHTML =
+	'We use cookie for improved functionality and analytics. <button class="btn btn--close-cookie">Got It!</button>';
+header.append(cookieMessage);
+
+document
+	.querySelector('.btn--close-cookie')
+	.addEventListener('click', function () {
+		cookieMessage.remove();
+		// cookieMessage.parentElement.removeChild(cookieMessage); // old way of doing
+	});
